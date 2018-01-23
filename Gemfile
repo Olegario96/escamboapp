@@ -57,5 +57,8 @@ group :development do
 
   # Retrieve the binding of a method's caller in MRI 1.9.2+
   gem 'binding_of_caller'
+
+  # Generate Entity-Relationship Diagrams for Rails applications
+  gem 'rails-erd'
 end
 
