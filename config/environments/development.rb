@@ -1,6 +1,9 @@
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 
+  # Foreman fix
+  $stdout.sync = true
+
   # Better Errors gem Config
   BetterErrors::Middleware.allow_ip! "0.0.0.0/0"
   config.consider_all_requests_local = true
