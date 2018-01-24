@@ -5,3 +5,21 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+puts 'Creating the categories...'
+categories = ['Animals and accessories',
+              'Sports',
+              'For your home',
+              'Eletronics and phones',
+              'Music and hobbies',
+              'Babys and kids',
+              'Fashion and beauty',
+              'Vehicles and boats',
+              'Properties',
+              'Jobs and business']
+
+categories.each do |category|
+  Category.find_or_create_by(description: category)
+end
+
+puts 'Categories created!'

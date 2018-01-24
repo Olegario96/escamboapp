@@ -13,6 +13,7 @@ gem 'devise'
 gem 'foreman'
 # Repository for collecting Locale data for Ruby on Rails I18n as well as other interesting, Rails related I18n stuff
 gem 'rails-i18n'
+gem  'rails-assets-bootstrap', '3.3.7', source: 'https://rails-assets.org'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
 # Use SCSS for stylesheets
