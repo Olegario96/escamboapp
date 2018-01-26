@@ -3,8 +3,6 @@ source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.8'
-# A library for generating fake data such as names, addresses, and phone numbers.
-gem 'faker'
 # Rails gem of the Bootstrap based admin theme SB Admin 2
 gem 'bootstrap_sb_admin_base_v2'
 # Translations for the devise gem
@@ -15,10 +13,14 @@ gem 'devise'
 gem 'foreman'
 # Repository for collecting Locale data for Ruby on Rails I18n as well as other interesting, Rails related I18n stuff
 gem 'rails-i18n'
-# Bootstrap
-gem 'rails-assets-bootstrap', '3.3.7', source: 'https://rails-assets.org'
-# NotifyJS
-gem 'rails-assets-notifyjs', source: 'https://rails-assets.org'
+source 'https://rails-assets.org' do
+  # BootboxJS
+  gem 'rails-assets-bootbox'
+  # Bootstrap
+  gem 'rails-assets-bootstrap', '3.3.7'
+  # NotifyJS
+  gem 'rails-assets-notifyjs'
+end
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
 # Use SCSS for stylesheets
@@ -49,6 +51,8 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # gem 'capistrano-rails', group: :development
 
 group :development, :test do
+  # A library for generating fake data such as names, addresses, and phone numbers.
+  gem 'faker'
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
 end
