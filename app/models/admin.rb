@@ -7,12 +7,4 @@ class Admin < ActiveRecord::Base
   scope :with_full_access, -> { where(role: 'full_access') }
 
   enum role: [:full_access, :restricted_access]
-
-  def role_description
-    if self.role == 'full_access'
-      'Acesso total'
-    else
-      'Acesso restrito'
-    end
-  end
 end
