@@ -28,6 +28,6 @@ puts 'Categories created!'
 
 puts 'Creating the administrator...'
 
-Admin.create!(name: 'Admin', email: 'admin@admin.com', password: '123456', password_confirmation: '123456')
+Admin.create!(name: 'Admin', email: 'admin@admin.com', password: '123456', password_confirmation: '123456', role: 0)
 
 puts 'Administrator created!'
