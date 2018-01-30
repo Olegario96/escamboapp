@@ -3,6 +3,8 @@ source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.8'
+# Integration of RubyMoney - Money with Rails
+gem 'money-rails'
 # O Lero-lero Generator é uma ferramenta capaz de gerar frases que 'falam' muita coisa mas que não tem conteúdo algum.
 gem 'lerolero_generator'
 # Minimal authorization through OO design and pure Ruby classes
