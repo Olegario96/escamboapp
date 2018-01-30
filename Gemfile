@@ -3,6 +3,8 @@ source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.8'
+# Easy file attachment management for ActiveRecord
+gem 'paperclip', '~> 5.0.0'
 # Integration of RubyMoney - Money with Rails
 gem 'money-rails'
 # O Lero-lero Generator é uma ferramenta capaz de gerar frases que 'falam' muita coisa mas que não tem conteúdo algum.
