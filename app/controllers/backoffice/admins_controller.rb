@@ -26,6 +26,7 @@ class Backoffice::AdminsController < BackofficeController
 
   def update
     if @admin.update(params_admin)
+      AdminMailer.update_email(current_admin, @admin).deliver_now
       redirect_to backoffice_admins_path, notice: "O adminstrador #{@admin.email} foi alterado!"
     else
       render :edit

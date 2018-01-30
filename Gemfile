@@ -74,5 +74,8 @@ group :development do
 
   # Generate Entity-Relationship Diagrams for Rails applications
   gem 'rails-erd'
+
+  # Catches mail and serves it through a dream.
+  gem 'mailcatcher'
 end
 

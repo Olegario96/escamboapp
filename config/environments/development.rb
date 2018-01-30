@@ -1,6 +1,10 @@
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 
+  # Mailcatcher
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = { :address => 'localhost', :port => 1025 }
+
   # Foreman fix
   $stdout.sync = true
 
@@ -11,7 +15,7 @@ Rails.application.configure do
   config.web_console.whitelisted_ips = ENV['TRUSTED_IP']
 
   # Devise gem config
-  config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+  # config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
 
   # In the development environment your application's code is reloaded on
   # every request. This slows down response time but is perfect for development
