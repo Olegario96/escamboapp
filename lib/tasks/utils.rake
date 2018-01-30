@@ -7,4 +7,20 @@ namespace :utils do
     end
     puts 'Administrators created!'
   end
+
+  desc "Creating fake ads"
+  task generate_ads: :environment do
+    puts 'Creating ads...'
+
+    100.times do
+      Ad.create!(
+        title: Faker::Lorem.sentence([2,3,4,5].sample),
+        description: LeroleroGenerator.paragraph(Random.rand(3)),
+        member: Member.all.sample,
+        category: Category.all.sample
+      )
+    end
+
+    puts 'Ads created!'
+  end
 end
