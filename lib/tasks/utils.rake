@@ -1,5 +1,5 @@
 namespace :utils do
-  desc "Create fake admins"
+  desc 'Create fake admins'
   task generate_admins: :environment do
     puts 'Creating administrators...'
     10.times do
@@ -8,7 +8,20 @@ namespace :utils do
     puts 'Administrators created!'
   end
 
-  desc "Creating fake ads"
+  desc 'Creating members'
+  task generate_members: :environment do
+    puts 'Creating members...'
+    100.times do
+      Member.create!(
+        email: Faker::Internet.email,
+        password: '123456',
+        password_confirmation: '123456'
+      )
+    end
+    puts 'Members created!'
+  end
+
+  desc 'Creating fake ads'
   task generate_ads: :environment do
     puts 'Creating ads...'
 
