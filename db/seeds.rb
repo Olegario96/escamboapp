@@ -31,3 +31,11 @@ puts 'Creating the administrator...'
 Admin.create!(name: 'Admin', email: 'admin@admin.com', password: '123456', password_confirmation: '123456', role: 0)
 
 puts 'Administrator created!'
+
+###############################################################################
+
+puts 'Creating the default member...'
+
+Member.create!(email: 'member@member.com', password: '123456', password_confirmation: '123456')
+
+puts 'Default member created!'
