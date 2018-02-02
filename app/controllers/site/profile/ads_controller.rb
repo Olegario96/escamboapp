@@ -16,6 +16,24 @@ class Site::Profile::AdsController < Site::ProfileController
     end
   end
 
+  def new
+    @ad = Ad.new
+  end
+
+  def create
+    puts '###########################################'
+    @ad = Ad.new(params_ad)
+    puts params_ad
+    puts '###########################################'
+    @ad.member = current_member
+
+    if @ad.save
+      redirect_to site_profile_ads_path, notice: 'Anúncio criado!'
+    else
+      render :new
+    end
+  end
+
   private
     def set_ad
       @ad = Ad.find(params[:id])

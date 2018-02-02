@@ -2,6 +2,8 @@ class Ad < ActiveRecord::Base
   belongs_to :member
   belongs_to :category
 
+  validates_presence_of :title, :description, :category, :price, :picture
+
   scope :descending_order, ->(amount=9) { limit(amount).order(created_at: :desc) }
   scope :ads_for_current_member, ->(current_member) { where(member: current_member) }
 
