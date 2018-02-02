@@ -45,14 +45,7 @@
     </div>
     <%= javascript_include_tag 'application' %>
     <%= javascript_include_tag 'backoffice' %>
-    <% if notice %>
-        <%= javascript_tag "$.notify('#{notice}', 'success');" %>
-    <% end %>
-    <% if alert %>
-        <script>
-            <%= javascript_tag "$.notify('#{alert}', 'error');" %>
-        </script>
-    <% end %>
+    <%= render partial: 'layouts/shared/notifications' %>
 </body>
 
 </html>

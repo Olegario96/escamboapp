@@ -5,7 +5,7 @@ source 'https://rubygems.org'
 gem 'rails', '4.2.8'
 # jQuery UI for the Rails asset pipeline
 gem 'jquery-ui-rails'
-# Easy file attachment management for ActiveRecord
+  # Easy file attachment management for ActiveRecord
 gem 'paperclip', '~> 5.0.0'
 # Integration of RubyMoney - Money with Rails
 gem 'money-rails'
@@ -30,8 +30,10 @@ source 'https://rails-assets.org' do
   gem 'rails-assets-bootbox'
   # Bootstrap
   gem 'rails-assets-bootstrap', '3.3.7'
-  # NotifyJS
-  gem 'rails-assets-notifyjs'
+  # Bootstrap Notify
+  gem 'rails-assets-bootstrap.growl'
+  # Animate CSS
+  gem 'rails-assets-animate-css'
 end
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
