@@ -3,6 +3,8 @@ source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.8'
+# The safe Markdown parser, reloaded.
+gem 'redcarpet'
 # jQuery UI for the Rails asset pipeline
 gem 'jquery-ui-rails'
   # Easy file attachment management for ActiveRecord
