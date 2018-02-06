@@ -1,4 +1,4 @@
-<div class="col-lg-9">
+<div class="col-lg-12">
 
   <div class="card mt-4">
     <%= image_tag @ad.picture.url(:large) %>
@@ -15,20 +15,7 @@
         <button type="button" class="btn btn-success btn-lg" data-toggle="modal" data-target="#commentModal">Deixe um comentário</button>
       </div>
       <hr/>
-      <div class="card-body">
-        <span class="text-warning">&#9733; &#9733; &#9733; &#9733; &#9734;</span>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis et enim aperiam inventore, similique necessitatibus neque non! Doloribus, modi sapiente laboriosam aperiam fugiat laborum. Sequi mollitia, necessitatibus quae sint natus.</p>
-        <small class="text-muted">Posted by Anonymous on 3/1/17</small>
-        <hr>
-        <span class="text-warning">&#9733; &#9733; &#9733; &#9733; &#9734;</span>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis et enim aperiam inventore, similique necessitatibus neque non! Doloribus, modi sapiente laboriosam aperiam fugiat laborum. Sequi mollitia, necessitatibus quae sint natus.</p>
-        <small class="text-muted">Posted by Anonymous on 3/1/17</small>
-        <hr>
-        <span class="text-warning">&#9733; &#9733; &#9733; &#9733; &#9734;</span>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis et enim aperiam inventore, similique necessitatibus neque non! Doloribus, modi sapiente laboriosam aperiam fugiat laborum. Sequi mollitia, necessitatibus quae sint natus.</p>
-        <small class="text-muted">Posted by Anonymous on 3/1/17</small>
-        <hr>
-      </div>
+      <%= render partial: 'site/ad_detail/comments' %>
     </div>
     <!-- /.card -->
 
