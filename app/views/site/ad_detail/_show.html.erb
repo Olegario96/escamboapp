@@ -10,7 +10,7 @@
   </div>
   <div class="well well-sm">
     <div class="ratings">
-      <p class="pull-right"><%= @ad.comments.count %> comentários</p>
+      <p class="pull-right"><%= @ad.rates('quality').count %> avaliações</p>
       <%= rating_for @ad, 'quality' %>
     </div>
   </div>
