@@ -7,9 +7,10 @@ class Ad < ActiveRecord::Base
   validates :title, :description_md, :description_short, :category, :price, :picture, :finish_date, presence: true
   validates :price, numericality: { greater_than: 0 }
 
-  scope :descending_order, ->(amount=9) { limit(amount).order(created_at: :desc) }
+  scope :descending_order, ->(amount=6, page=1) { limit(amount).order(created_at: :desc).page(page).per(9) }
   scope :ads_for_current_member, ->(current_member) { where(member: current_member) }
   scope :by_category, ->(id) { where(category: id) }
+  scope :search, ->(q, page) { where("lower(title) LIKE ?", "%#{q.downcase}%").page(page).per(6) }
 
   monetize :price_cents
 
