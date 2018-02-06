@@ -12,7 +12,7 @@ class Ad < ActiveRecord::Base
 
   scope :descending_order, ->(page=1) { order(created_at: :desc).page(page).per(AMOUNT_PER_PAGE) }
   scope :ads_for_current_member, ->(current_member) { where(member: current_member) }
-  scope :by_category, ->(id) { where(category: id) }
+  scope :by_category, ->(id, page=1) { where(category: id).page(page).per(AMOUNT_PER_PAGE) }
   scope :search, ->(q, page) { where("lower(title) LIKE ?", "%#{q.downcase}%").page(page).per(AMOUNT_PER_PAGE) }
 
   monetize :price_cents
