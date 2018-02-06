@@ -2,7 +2,7 @@ class Ad < ActiveRecord::Base
   before_save :md_to_html
 
   belongs_to :member
-  belongs_to :category
+  belongs_to :category, counter_cache: true
 
   validates :title, :description_md, :description_short, :category, :price, :picture, :finish_date, presence: true
   validates :price, numericality: { greater_than: 0 }
