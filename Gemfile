@@ -3,6 +3,8 @@ source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.8'
+# FriendlyId is the “Swiss Army bulldozer” of slugging and permalink plugins for ActiveRecord
+gem 'friendly_id'
 # The safe Markdown parser, reloaded.
 gem 'redcarpet'
 # jQuery UI for the Rails asset pipeline
