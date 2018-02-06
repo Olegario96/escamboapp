@@ -6,30 +6,55 @@
       <h3 class="card-title"><%= @ad.title %></h3>
       <h4><%= humanized_money_with_symbol @ad.price %></h4>
       <p class="card-text"><%= @ad.description.html_safe %></p>
-      <span class="text-warning">&#9733; &#9733; &#9733; &#9733; &#9734;</span>
-      4.0 stars
     </div>
   </div>
-  <!-- /.card -->
+  <div class="well">
+    <!-- /.card -->
+    <div class="card card-outline-secondary my-4">
+      <div class="text-right">
+        <button type="button" class="btn btn-success btn-lg" data-toggle="modal" data-target="#commentModal">Deixe um comentário</button>
+      </div>
+      <hr/>
+      <div class="card-body">
+        <span class="text-warning">&#9733; &#9733; &#9733; &#9733; &#9734;</span>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis et enim aperiam inventore, similique necessitatibus neque non! Doloribus, modi sapiente laboriosam aperiam fugiat laborum. Sequi mollitia, necessitatibus quae sint natus.</p>
+        <small class="text-muted">Posted by Anonymous on 3/1/17</small>
+        <hr>
+        <span class="text-warning">&#9733; &#9733; &#9733; &#9733; &#9734;</span>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis et enim aperiam inventore, similique necessitatibus neque non! Doloribus, modi sapiente laboriosam aperiam fugiat laborum. Sequi mollitia, necessitatibus quae sint natus.</p>
+        <small class="text-muted">Posted by Anonymous on 3/1/17</small>
+        <hr>
+        <span class="text-warning">&#9733; &#9733; &#9733; &#9733; &#9734;</span>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis et enim aperiam inventore, similique necessitatibus neque non! Doloribus, modi sapiente laboriosam aperiam fugiat laborum. Sequi mollitia, necessitatibus quae sint natus.</p>
+        <small class="text-muted">Posted by Anonymous on 3/1/17</small>
+        <hr>
+      </div>
+    </div>
+    <!-- /.card -->
 
-  <div class="card card-outline-secondary my-4">
-    <div class="card-header">
-      Product Reviews
-    </div>
-    <div class="card-body">
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis et enim aperiam inventore, similique necessitatibus neque non! Doloribus, modi sapiente laboriosam aperiam fugiat laborum. Sequi mollitia, necessitatibus quae sint natus.</p>
-      <small class="text-muted">Posted by Anonymous on 3/1/17</small>
-      <hr>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis et enim aperiam inventore, similique necessitatibus neque non! Doloribus, modi sapiente laboriosam aperiam fugiat laborum. Sequi mollitia, necessitatibus quae sint natus.</p>
-      <small class="text-muted">Posted by Anonymous on 3/1/17</small>
-      <hr>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis et enim aperiam inventore, similique necessitatibus neque non! Doloribus, modi sapiente laboriosam aperiam fugiat laborum. Sequi mollitia, necessitatibus quae sint natus.</p>
-      <small class="text-muted">Posted by Anonymous on 3/1/17</small>
-      <hr>
-      <a href="#" class="btn btn-success">Leave a Review</a>
-    </div>
   </div>
-  <!-- /.card -->
 
+  <!-- /.col-lg-9 -->
+
+  <!-- Button trigger modal -->
 </div>
-<!-- /.col-lg-9 -->
+<!-- Modal -->
+<div class="modal fade" id="commentModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
