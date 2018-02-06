@@ -3,6 +3,8 @@ source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.8'
+# A Ruby Gem that wraps the functionality of jQuery Raty library, and provides optional IMDB style rating.
+gem 'ratyrate'
 # Translations for the kaminari gem
 gem 'kaminari-i18n'
 # A Scope & Engine based, clean, powerful, customizable and sophisticated paginator for Ruby webapps
