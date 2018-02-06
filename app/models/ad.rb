@@ -1,4 +1,6 @@
 class Ad < ActiveRecord::Base
+  AMOUNT_PER_PAGE = 6
+
   before_save :md_to_html
 
   belongs_to :member
@@ -7,10 +9,10 @@ class Ad < ActiveRecord::Base
   validates :title, :description_md, :description_short, :category, :price, :picture, :finish_date, presence: true
   validates :price, numericality: { greater_than: 0 }
 
-  scope :descending_order, ->(amount=6, page=1) { limit(amount).order(created_at: :desc).page(page).per(9) }
+  scope :descending_order, ->(page=1) { order(created_at: :desc).page(page).per(AMOUNT_PER_PAGE) }
   scope :ads_for_current_member, ->(current_member) { where(member: current_member) }
   scope :by_category, ->(id) { where(category: id) }
-  scope :search, ->(q, page) { where("lower(title) LIKE ?", "%#{q.downcase}%").page(page).per(6) }
+  scope :search, ->(q, page) { where("lower(title) LIKE ?", "%#{q.downcase}%").page(page).per(AMOUNT_PER_PAGE) }
 
   monetize :price_cents
 
