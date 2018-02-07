@@ -1,5 +1,5 @@
-<%= content_for :script do %>
-  <%= javascript_include_tag 'site/profile/profile_members' %>
+<%= content_for :javascripts do %>
+  <%= javascript_include_tag 'site/profile/ads' %>
 <% end %>
 <h1><%= "Editando #{@profile_member.model_name.human}" %></h1>
 <% if @profile_member.errors.any? %>
