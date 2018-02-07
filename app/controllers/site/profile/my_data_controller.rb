@@ -18,6 +18,6 @@ class Site::Profile::MyDataController < Site::ProfileController
     end
 
     def set_profile_member
-      @profile_member = ProfileMember.find(current_member.id)
+      @profile_member = ProfileMember.find_by(member_id: current_member.id)
     end
 end

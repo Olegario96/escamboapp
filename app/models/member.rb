@@ -1,6 +1,7 @@
 class Member < ActiveRecord::Base
   has_many :ads
   has_one :profile_member
+  accepts_nested_attributes_for :profile_member
 
   ratyrate_rater
 
