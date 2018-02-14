@@ -28,11 +28,15 @@ namespace :dev do
   task generate_members: :environment do
     puts 'Creating members...'
     100.times do
-      Member.create!(
+      member = Member.new(
         email: Faker::Internet.email,
         password: '123456',
         password_confirmation: '123456'
       )
+      member.build_profile_member
+      member.profile_member.first_name = Faker::Name.first_name
+      member.profile_member.second_name = Faker::Name.last_name
+      member.save!
     end
     puts 'Members created!'
   end

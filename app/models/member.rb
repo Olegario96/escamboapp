@@ -3,8 +3,6 @@ class Member < ActiveRecord::Base
   has_one :profile_member
   accepts_nested_attributes_for :profile_member
 
-  validate :nested_attributes
-
   ratyrate_rater
 
   # Include default devise modules. Others available are:
