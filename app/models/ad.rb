@@ -14,6 +14,7 @@ class Ad < ActiveRecord::Base
   scope :ads_for_current_member, ->(current_member) { where(member: current_member) }
   scope :by_category, ->(id, page=1) { where(category: id).page(page).per(AMOUNT_PER_PAGE) }
   scope :search, ->(q, page) { where("lower(title) LIKE ?", "%#{q.downcase}%").page(page).per(AMOUNT_PER_PAGE) }
+  scope :random_carousel, ->(amount) { limit(amount).order("RANDOM()") }
 
   monetize :price_cents
 
