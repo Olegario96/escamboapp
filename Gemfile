@@ -106,9 +106,11 @@ group :development do
   gem 'capistrano-bundler', '~>1.2'
   # Bundler support for Capistrano 3.x
   gem 'capistrano-rails', '~> 1.2'
+  # RVM support for Capistrano v3
+  gem 'capistrano-rvm'
 end
 
 group :production do
   # MySQL adapter
-  gem 'mysql2'
+  gem 'mysql2', '~>0.3.18'
 end
