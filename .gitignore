@@ -3,3 +3,4 @@ db/schema.rb
 tmp/*
 public/system
 log/*.log
+config/database.yml
