@@ -37,6 +37,12 @@ gem 'devise'
 gem 'foreman'
 # Repository for collecting Locale data for Ruby on Rails I18n as well as other interesting, Rails related I18n stuff
 gem 'rails-i18n'
+# A library for generating fake data such as names, addresses, and phone numbers.
+gem 'faker'
+# Markdown Lorem Ipsum generator
+gem 'doctor_ipsum'
+
+
 source 'https://rails-assets.org' do
   # BootboxJS
   gem 'rails-assets-bootbox'
@@ -79,12 +85,8 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # gem 'capistrano-rails', group: :development
 
 group :development, :test do
-  # A library for generating fake data such as names, addresses, and phone numbers.
-  gem 'faker'
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
-  # Markdown Lorem Ipsum generator
-  gem 'doctor_ipsum'
 end
 
 group :development do

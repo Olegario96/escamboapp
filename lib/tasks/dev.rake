@@ -3,7 +3,9 @@ namespace :dev do
   task setup: :environment do
     puts 'Executing setup for development'
     puts "Deleting DB... #{%x(rake db:drop)}"
-    puts "Deleting images for public/system #{%x(rm -rf public/system/)}"
+    if Rails.env.development?
+      puts "Deleting images for public/system #{%x(rm -rf public/system/)}"
+    end
     puts "Creating DB... #{%x(rake db:create)}"
     puts %x(rake db:migrate)
     puts %x(rake db:seed)
