@@ -90,20 +90,25 @@ end
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 2.0'
-
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
-
   # Better error page for Rack apps
   gem 'better_errors'
-
   # Retrieve the binding of a method's caller in MRI 1.9.2+
   gem 'binding_of_caller'
-
   # Generate Entity-Relationship Diagrams for Rails applications
   gem 'rails-erd'
-
   # Catches mail and serves it through a dream.
   gem 'mailcatcher'
+  # Remote multi-server automation tool
+  gem 'capistrano', '~> 3.7'
+  # Official Ruby on Rails specific tasks for Capistrano
+  gem 'capistrano-bundler', '~>1.2'
+  # Bundler support for Capistrano 3.x
+  gem 'capistrano-rails', '~> 1.2'
 end
 
+group :production do
+  # MySQL adapter
+  gem 'mysql2'
+end
