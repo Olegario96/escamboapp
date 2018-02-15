@@ -1,5 +1,3 @@
-require 'doctor_ipsum'
-
 namespace :dev do
   desc 'Setup development'
   task setup: :environment do
