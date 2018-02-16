@@ -26,7 +26,7 @@ class Ad < ActiveRecord::Base
 
   ratyrate_rateable 'quality'
 
-  has_attached_file :picture, styles: { medium: '320x150#', thumb: '100x100>', large: '800x300#' }, default: '/images/:styles/missing.png'
+  has_attached_file :picture, styles: { medium: '320x150#', thumb: '200x200>', large: '800x300#' }, default: '/images/:styles/missing.png'
   validates_attachment_content_type :picture, content_type: /\Aimage\/.*\z/
 
   private
