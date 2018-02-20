@@ -1,6 +1,7 @@
 class Site::SearchController < SiteController
   def ads
-    @ads = Ad.search(params[:q], params[:page])
+    cookies[:search] = params[:q]
+    @ads = Ad.search(cookies[:search], params[:page])
     @categories = Category.all
   end
 end
