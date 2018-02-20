@@ -1,0 +1,2 @@
+module Checout::PaymentsHelper
+end

@@ -5,6 +5,20 @@
     <div class="card-body">
       <h3 class="card-title"><%= @ad.title %></h3>
       <h4><%= humanized_money_with_symbol @ad.price %></h4>
+      <% if member_signed_in? %>
+        <div class="text-right">
+          <%= form_tag(checkout_payments_path) do %>
+            <%=  hidden_field_tag :ad_id, @ad.id %>
+            <%= submit_tag "Comprar", class: 'btn btn-success', data: { confirm: 'Are you sure?' } %>
+          <% end %>
+        </div>
+        <hr/>
+      <% else %>
+        <div class="text-right">
+          <%= link_to "Efetue login para comprar", new_member_session_path, class: 'btn btn-success' %>
+        </div>
+        <hr/>
+      <% end %>
       <p class="card-text"><%= @ad.description.html_safe %></p>
     </div>
   </div>

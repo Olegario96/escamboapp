@@ -4,3 +4,20 @@
       role:
         full_access: Acesso total
         restricted_access: Acesso restrito
+    order:
+      status:
+        requested: Solicitado
+        waiting: Aguardando pagamento
+        analysing: Analisando pagamento
+        paid: Pago
+        available: Disponível
+        dispute: Em disputa
+        returned: Devolvido
+        canceled: Cancelado
+        debited: Debitado
+        temporary_retention: Retenção temporária
+    ad:
+      status:
+        active: Ativo
+        processing: Processando pagamento
+        sold: Vendido
