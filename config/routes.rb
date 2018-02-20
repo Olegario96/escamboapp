@@ -26,6 +26,7 @@ Rails.application.routes.draw do
 
   namespace :checkout do
     resources :payments, only: [:create]
+    resources :notifications, only: [:create]
   end
 
   devise_for :admins, :skip => [:registrations]
