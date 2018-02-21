@@ -3,6 +3,8 @@ source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.8'
+# Intelligent search made easy with Rails and Elasticsearch
+gem 'searchkick'
 # Create beautiful JavaScript charts with one line of Ruby
 gem 'chartkick'
 # Wicked PDF dependency

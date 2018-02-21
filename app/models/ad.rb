@@ -1,6 +1,8 @@
 class Ad < ActiveRecord::Base
   AMOUNT_PER_PAGE = 6
 
+  searchkick
+
   enum status: [:active, :processing, :sold]
 
   before_save :md_to_html
@@ -15,7 +17,6 @@ class Ad < ActiveRecord::Base
   scope :descending_order, ->(page=1) { order(created_at: :desc).page(page).per(AMOUNT_PER_PAGE) }
   scope :ads_for_current_member, ->(current_member) { where(member: current_member) }
   scope :by_category, ->(id, page=1) { where(category: id).page(page).per(AMOUNT_PER_PAGE) }
-  scope :search, ->(q, page) { where("lower(title) LIKE ?", "%#{q.downcase}%").page(page).per(AMOUNT_PER_PAGE) }
   scope :random_carousel, ->(amount) {
     if Rails.env.production?
       limit(amount).order("RAND()")
