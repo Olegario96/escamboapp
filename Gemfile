@@ -3,6 +3,10 @@ source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.8'
+# Wicked PDF dependency
+gem 'wkhtmltopdf-binary'
+# PDF generator (from HTML) plugin for Ruby on Rails
+gem 'wicked_pdf'
 # Generate PDF for RoR
 gem 'prawn-rails'
 # Biblioteca de integração em Ruby
