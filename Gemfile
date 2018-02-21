@@ -3,6 +3,8 @@ source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.8'
+# Generate PDF for RoR
+gem 'prawn-rails'
 # Biblioteca de integração em Ruby
 gem 'pagseguro-oficial', '~>2.5.0'
 # A Ruby Gem that wraps the functionality of jQuery Raty library, and provides optional IMDB style rating.
