@@ -3,6 +3,8 @@ source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.8'
+# Biblioteca de integração em Ruby
+gem 'pagseguro-oficial', '~>2.5.0'
 # A Ruby Gem that wraps the functionality of jQuery Raty library, and provides optional IMDB style rating.
 gem 'ratyrate'
 # Translations for the kaminari gem
@@ -109,6 +111,8 @@ group :development do
   gem 'capistrano-rvm'
   # Unicorn for Capistrano v3
   gem 'capistrano3-unicorn'
+  # Rack Middleware for handling Cross-Origin Resource Sharing (CORS)
+  gem 'rack-cors', :require => 'rack/cors'
 end
 
 group :production do

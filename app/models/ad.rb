@@ -1,6 +1,8 @@
 class Ad < ActiveRecord::Base
   AMOUNT_PER_PAGE = 6
 
+  enum status: [:active, :processing, :sold]
+
   before_save :md_to_html
 
   belongs_to :member
