@@ -3,6 +3,8 @@ source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.8'
+# Create beautiful JavaScript charts with one line of Ruby
+gem 'chartkick'
 # Wicked PDF dependency
 gem 'wkhtmltopdf-binary'
 # PDF generator (from HTML) plugin for Ruby on Rails
