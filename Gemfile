@@ -3,6 +3,8 @@ source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.8'
+# Role management library with resource scoping
+gem 'rolify'
 # Simple, efficient background processing for Ruby
 gem 'sidekiq'
 # Intelligent search made easy with Rails and Elasticsearch
