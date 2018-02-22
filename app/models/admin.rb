@@ -11,5 +11,17 @@ class Admin < ActiveRecord::Base
 
   # scope :with_full_access, -> { where(role: ROLE[:full_access]) }
   # scope :with_restricted_access, -> { where(role: ROLES[:restricted_access]) }
-  scope :with_restricted_access, -> { with_role(Role::ROLES[1]) }
+  scope :with_restricted_access, -> { with_role(Role.availables[1]) }
+
+  def checked_roles
+    self.roles.map do |role|
+      role.name
+    end
+  end
+
+  def roles_descriptions
+    self.roles.map do |role|
+      Role::ROLES[role.name.to_sym]
+    end
+  end
 end

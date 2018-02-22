@@ -1,5 +1,12 @@
 class Role < ActiveRecord::Base
-    ROLES = %w{full_access restricted_access}
+    ROLES = {
+      full_access: 'Acesso completo',
+      restricted_access: 'Acesso Restrito'
+    }
+
+    def self.availables
+      ROLES.map { |key, value| key.to_s }
+    end
 
     has_and_belongs_to_many :admins, :join_table => :admins_roles
 
@@ -12,6 +19,6 @@ class Role < ActiveRecord::Base
               :inclusion => { :in => Rolify.resource_types },
               :allow_nil => true
 
-    validates :name, inclusion: { in: ROLES }
+    validates :name, inclusion: { in: Role.availables }
     scopify
 end
