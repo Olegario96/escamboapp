@@ -20,7 +20,7 @@ class Ad < ActiveRecord::Base
     if Rails.env.production?
       limit(amount).order("RAND()")
     else
-      limit(amount).order("RANDOM()")
+      limit(amount).order("RAND()")
     end
   }
 
