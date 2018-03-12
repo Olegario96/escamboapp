@@ -6,6 +6,7 @@
     editing: Editando %{model}
     new: Novo %{model}
     errors: ocorreram...
+    write_commentary: Deixe um comentário
     created: Item criado com sucesso!
     updated: Item atualizado com sucesso!
     destroyed: Item excluído com sucesso!

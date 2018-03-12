@@ -86,6 +86,17 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
+  # RSpec for Rails-3+
+  gem 'rspec-rails', '~>3.7'
+  # Factory Bot ♥ Rails
+  gem 'factory_bot_rails'
+end
+
+group :test do
+  # Acceptance test framework for web applications
+  gem 'capybara'
+  # A library for setting up Ruby objects as test data.
+  gem 'factory_bot'
 end
 
 group :development do
