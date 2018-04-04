@@ -46,11 +46,17 @@ Rails.application.routes.draw do
         get '/get-all' => 'category#index'
         post '/get' => 'category#show'
         post '/create' => 'category#create'
+        post '/update' => 'category#update'
         post '/delete' => 'category#destroy'
       end
       scope '/comment' do
       end
       scope '/member' do
+        get '/get-all' => 'member#index'
+        post '/get' => 'member#show'
+        post '/create' => 'member#create'
+        post '/update' => 'member#update'
+        post '/delete' => 'member#destroy'
       end
       scope '/profile_member' do
       end

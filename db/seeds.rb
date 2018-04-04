@@ -43,3 +43,13 @@ member.profile_member.second_name = Faker::Name.last_name
 member.save!
 
 puts 'Default member created!'
+
+puts 'Creating members...'
+  1000.times do
+    member = Member.create!(
+      email: Faker::Internet.email,
+      password: '123456',
+      password_confirmation: '123456'
+    )
+  end
+puts 'Members created!'

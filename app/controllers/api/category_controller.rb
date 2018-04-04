@@ -1,5 +1,6 @@
 class Api::CategoryController < Api::BaseApiController
   before_action :find_category, except: [:index, :create]
+  before_action :find_category_by_description, only: [:create]
 
   def index
     @category = Category.all
@@ -7,7 +8,7 @@ class Api::CategoryController < Api::BaseApiController
   end
 
   def create
-    if !@category
+    if @category.nil?
       @category = Category.new(description: params_category[:description])
       if @category.save
         render json: @category
@@ -24,7 +25,7 @@ class Api::CategoryController < Api::BaseApiController
   end
 
   def update
-    if @category.update(params_category[:description])
+    if @category.update(params_category)
       render json: @category
     else
       render json: "Category #{@category.description} already exists.", status: 400
@@ -47,5 +48,9 @@ class Api::CategoryController < Api::BaseApiController
 
     def find_category
       @category = Category.find(params_category[:id])
+    end
+
+    def find_category_by_description
+      @category = Category.find_by_description(params_category[:description])
     end
 end
