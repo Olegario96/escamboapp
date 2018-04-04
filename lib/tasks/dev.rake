@@ -15,6 +15,20 @@ namespace :dev do
     puts %x(rake dev:generate_comments)
   end
 
+  desc 'Setup test'
+  task setup: :environment do
+    puts 'Executing setup for test'
+    puts "Deleting DB... #{%x(rake db:drop)}"
+    Rails.env = 'test'
+    puts "Creating DB... #{%x(rake db:create)}"
+    puts %x(rake db:migrate)
+    puts %x(rake db:seed)
+    puts %x(rake dev:generate_members)
+    puts %x(rake dev:generate_ads)
+    puts %x(rake dev:generate_admins)
+    puts %x(rake dev:generate_comments)
+  end
+
   desc 'Create fake admins'
   task generate_admins: :environment do
     puts 'Creating administrators...'

@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  mount_devise_token_auth_for 'Member', at: 'auth'
   root 'site/home#index'
   post '/rate' => 'rater#create', :as => 'rate'
   get 'backoffice', to: 'backoffice/dashboard#index'
@@ -36,9 +35,21 @@ Rails.application.routes.draw do
     sessions: 'members/sessions',
     registrations: 'members/registrations'
   }
-  scope '/api' do
+
+  namespace :api do
     scope '/v1' do
+      get '/' => 'base_api#index'
+      scope '/login' do
+        post '/' => 'login#index'
+      end
       scope '/category' do
+        get '/' => 'api_category#index'
+        post '/' => 'api_category#create'
+        scope '/' do
+          get '/' => 'api_category#show'
+          post '/' => 'api_category#update'
+          delete '/' => 'api_category#destroy'
+        end
       end
       scope '/comment' do
       end

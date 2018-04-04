@@ -31,6 +31,8 @@ gem 'pundit'
 gem 'enum_help'
 # Rails gem of the Bootstrap based admin theme SB Admin 2
 gem 'bootstrap_sb_admin_base_v2'
+# Add token support to Rails apps with this plugin
+gem 'tokens'
 # Translations for the devise gem
 gem 'devise-i18n'
 # Flexible authentication solution for Rails with Warden.
