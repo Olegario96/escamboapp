@@ -2,7 +2,10 @@ class Api::CategoryController < Api::BaseApiController
   before_action :find_category, except: [:index]
 
   def index
-    render json: Category.all
+    puts('>>>>>>>>>>>>>>>')
+    categories = Category.first
+    puts(categories)
+    render json: categories
   end
 
   def create
