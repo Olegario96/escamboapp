@@ -30,6 +30,9 @@ module Escamboapp
     # config.i18n.default_locale = :de
     config.i18n.default_locale = :'pt-BR'
 
+    # Fixing UTF-8 problem
+    config.active_support.escape_html_entities_in_json = false
+
     # Do not swallow errors in after_commit/after_rollback callbacks.
     config.active_record.raise_in_transactional_callbacks = true
 

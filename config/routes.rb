@@ -43,8 +43,10 @@ Rails.application.routes.draw do
         post '/' => 'login#index'
       end
       scope '/category' do
-        get '/' => 'category#index'
-        post '/' => 'category#show'
+        get '/get-all' => 'category#index'
+        post '/get' => 'category#show'
+        post '/create' => 'category#create'
+        post '/delete' => 'category#destroy'
       end
       scope '/comment' do
       end

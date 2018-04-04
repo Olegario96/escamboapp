@@ -1,23 +1,21 @@
 class Api::CategoryController < Api::BaseApiController
-  before_action :find_category, except: [:index]
+  before_action :find_category, except: [:index, :create]
 
   def index
-    puts('>>>>>>>>>>>>>>>')
-    categories = Category.first
-    puts(categories)
-    render json: categories
+    @category = Category.all
+    render json: @category
   end
 
   def create
     if !@category
-      @category = Category.new(params[:description])
+      @category = Category.new(description: params_category[:description])
       if @category.save
         render json: @category
       else
-        render json: "It was not possible to create #{@category.description}", status: 500
+        render json: "Category #{@category.description} already exists.", status: 400
       end
     else
-      render json: "Category #{@category.description} already exists.", status: 400
+      render json: "It was not possible to create #{@category.description}", status: 500
     end
   end
 
@@ -26,10 +24,10 @@ class Api::CategoryController < Api::BaseApiController
   end
 
   def update
-    if @category.update(params_customer[:description])
+    if @category.update(params_category[:description])
       render json: @category
     else
-      render json: "It was not possible to update #{category.description}", status: 500
+      render json: "Category #{@category.description} already exists.", status: 400
     end
   end
 
@@ -43,8 +41,11 @@ class Api::CategoryController < Api::BaseApiController
   end
 
   private
+    def params_category
+      params.require(:category).permit(:id, :description)
+    end
+
     def find_category
-      @category = Category.find_by_description(params[:description])
-      render nothing: true, status: :not_found unless @category.present?
+      @category = Category.find(params_category[:id])
     end
 end
