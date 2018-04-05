@@ -9,7 +9,7 @@ class Ad < ActiveRecord::Base
   belongs_to :category, counter_cache: true
   has_many :comments
 
-  validates :title, :description_md, :description_short, :category, :price, :picture, :finish_date, presence: true
+  validates :title, :description_md, :description_short, :category, :price, :finish_date, presence: true
   validates :price, numericality: { greater_than: 0 }
 
   scope :descending_order, ->(page=1) { order(created_at: :desc).page(page).per(AMOUNT_PER_PAGE) }

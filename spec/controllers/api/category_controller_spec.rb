@@ -39,8 +39,9 @@ RSpec.describe Api::CategoryController, type: :controller do
 
   describe 'POST #destroy' do
     it 'returns a id with category destroyed' do
-      id = @category.id
-      post :destroy, category: { :id => @category.id }
+      post :create, category: { :description => Faker::Commerce.department }
+      id = Category.last.id
+      post :destroy, category: { :id => Category.last.id }
       expect(response.body).to include(id.to_s)
     end
   end

@@ -36,11 +36,11 @@ RSpec.describe Api::MemberController, type: :controller do
     end
   end
 
-  # describe 'POST #destroy' do
-  #   it 'returns id for member destroyed' do
-  #     id = @member.id
-  #     post :destroy, member: { :id => @member.id }
-  #     expect(response.body).to include(id.to_s)
-  #   end
-  # end
+  describe 'POST #destroy' do
+    it 'returns id for member destroyed' do
+      id = @member.id
+      post :destroy, member: { :id => @member.id }
+      expect(response.body).to include(id.to_s)
+    end
+  end
 end

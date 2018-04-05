@@ -1,7 +1,5 @@
 class ApplicationController < ActionController::Base
   before_filter :store_current_location, :unless => :devise_controller?
-  before_filter :configure_permitted_parameters, if: :devise_controller?
-
 
   # Pundit import
   include Pundit
@@ -37,9 +35,5 @@ class ApplicationController < ActionController::Base
   private
     def store_current_location
       store_location_for(:member, request.url)
-    end
-
-    def configure_permitted_parameters
-      devise_parameter_sanitizer.for(:account_update) << [:name]
     end
 end

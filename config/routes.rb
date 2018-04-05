@@ -49,8 +49,6 @@ Rails.application.routes.draw do
         post '/update' => 'category#update'
         post '/delete' => 'category#destroy'
       end
-      scope '/comment' do
-      end
       scope '/member' do
         get '/get-all' => 'member#index'
         post '/get' => 'member#show'
@@ -58,9 +56,19 @@ Rails.application.routes.draw do
         post '/update' => 'member#update'
         post '/delete' => 'member#destroy'
       end
-      scope '/profile_member' do
+      scope '/comment' do
+        get '/get-all' => 'comment#index'
+        post '/get' => 'comment#show'
+        post '/create' => 'comment#create'
+        post '/update' => 'comment#update'
+        post '/delete' => 'comment#destroy'
       end
-      scope '/rate' do
+      scope '/ad' do
+        get '/get-all' => 'ad#index'
+        post '/get' => 'ad#show'
+        post '/create' => 'ad#create'
+        post '/update' => 'ad#update'
+        post '/delete' => 'ad#destroy'
       end
     end
   end
